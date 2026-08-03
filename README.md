@@ -220,9 +220,7 @@ return jsonify({"error": "Aucune idée reçue"}), 400
 
 # 1. Charger la mémoire globale du projet
 cerveau = charger_cerveau()
-cerveau.idees_recues.append(MessageIdee(source=provenance, role="user", content=message_interne))
-    
-    try:
+cerveau.idees_recues.append(MessageIdee(source=provenance, role="user", content=message_interne))try:
         # 2. Convertir tout l'historique global pour Gemini
         contents = [types.Content(role=m.role, parts=[types.Part.from_text(text=f"[{m.source}]: {m.content}")]) for m in cerveau.idees_recues]
         
