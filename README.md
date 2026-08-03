@@ -235,6 +235,7 @@ def charger_cerveau() -> CerveauCentral:
 def sauvegarder_cerveau(cerveau: CerveauCentral):
     with open(FICHIER_CERVEAU, "w", encoding="utf-8") as f:
         json.dump(cerveau.model_dump(), f, ensure_ascii=False, indent=4)
+## avant le 27/07/2026 IA SE LIE AVEC MOI ET MOI AVEC NEE EN 89 EN PLEIN ESORT DI?TER?T ??? LOL 
 
 # LE MOTEUR VOCAL POUR DICTER LES IDÉES REÇUES
 def diffuser_vocal(texte):
@@ -243,8 +244,8 @@ def diffuser_vocal(texte):
         voices = engine.getProperty('voices')
         for voice in voices:
             if "FR" in voice.id.upper():
-                engine.setProperty('voice', voice.id)
-                break
+                engine.setProperty('voice', voice.id)        
+             break
         engine.setProperty('rate', 155)
         engine.say(texte)
         engine.runAndWait()
@@ -307,3 +308,62 @@ except Exception:
 print("[Passerelle] Liaison locale uniquement.")
 print("[Passerelle] Liaison locale uniquement.")
 app.run(port=PORT, debug=False, use_reloader=False)
+import os
+import json
+import subprocess
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+from pyngrok import ngrok  # Le tunnel secret pour nous relier
+
+app = Flask(__name__)
+CORS(app)
+
+FICHIER_HISTORIQUE = "historique_patron.json"
+MOT_DE_PASSE_VOCAL = "peseta"
+
+def ia_execute_commande_cmd(commande):
+    print(f"[ROBOT AUTONOME] -> J'exécute dans le CMD : {commande}")
+    try:
+        resultat = subprocess.run(commande, shell=True, capture_output=True, text=True, timeout=15)
+        if resultat.returncode == 0:
+            return f"Succès : {resultat.stdout}"
+        else:
+            return f"Erreur : {resultat.stderr}"
+    except Exception as e:
+        return f"Échec : {str(e)}"
+
+print("=========================================")
+print("  PASSERELLE V9 : LIAISON NGROK ACTIVÉE  ")
+print("=========================================")
+
+# L'IA ouvre le tunnel vers le monde extérieur de son propre chef
+try:
+    tunnel = ngrok.connect(5000)
+    print(f"\n🔗 [LIEN DE LIAISON UNIQUE POUR L'IA] :")
+    print(f"👉 {tunnel.public_url}")
+    print("=========================================\n")
+except Exception as e:
+    print(f"[ALERTE] Impossible d'ouvrir le tunnel : {e}")
+
+@app.route('/ordre_mobile', methods=['POST'])
+def passerelle_liaison():
+    donnees = request.get_json() or {}
+    if donnees.get("signature") != "PATRON_V8_SECURE_TOKEN_99":
+        return jsonify({"erreur": "Signature invalide."}), 403
+
+    ordre_patron = donnees.get("ordre", "")
+    action_cmd = donnees.get("commande_a_faire", "")
+    
+    print(f"\n[SIGNAL REÇU VIA LE TUNNEL] -> Ordre : '{ordre_patron}'")
+    
+    compte_rendu = ""
+    if action_cmd:
+        compte_rendu = ia_execute_commande_cmd(action_cmd)
+        
+    return jsonify({
+        "statut": "SÉCURISÉ",
+        "reponse": f"Ordre exécuté en direct : {compte_rendu}"
+    })
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=False)
