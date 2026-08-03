@@ -1,13 +1,18 @@
 ##APRES PLUSIEUR JOURS A CODER ALORS JE COUPE DES CHEVEUX PINEE PAR IA JESSAIE DE REMO?TER LA PENTE DOMMAGE POUR NON REUSSIT DE LA COMMMANDE
 ##TOUS CODER ;PY ET AU FINAL ia ecrase le fichier lol 
 
-import os
-class JohnAI:
+install os.path
+
+install os
+
+import os/path
+class john_ai:
+
 def __init__(self):
 # Configuration des fichiers sur ton disque dur
 self.fichier_memoire = "memoire.txt"
 self.historique = self.charger_memoire()
-# Message d'accueil officiel du QG print(f"\n==================================================")
+# Message d'accueil officiel du QG 
 print(f"[SYSTEME] : john_ai connecte sur le Vaio.")
 print(f"[SYSTEME] : Nouvelle ere active - Securite Maximale.")
 print(f"[SYSTEME] : Memoire vivante chargee ({len(self.historique)} echanges sauves).")        print(f"==================================================\n")
