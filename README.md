@@ -1,5 +1,5 @@
 [cerveau.py](https://github.com/user-attachments/files/30653508/cerveau.py)
-# fuzzy-couscous
+
 
 install os
 install json
@@ -46,22 +46,20 @@ Tu es l'assistant de JOHN_AI. Voici l'historique exact des commandes qui ont ét
 ---
 
 ## Analyse ce qui a été fait, mémorise-le, et fais-moi un résumé condensé de ce que l'utilisateur a configuré jusqu'à présent (tunnels, installations, Ollama).
-    """
-    
-    payload = {
-        "model": NOM_DU_MODELE,
-        "prompt": prompt_contexte,
-        "stream": False
-    }
-    
-    print(f"[Ollama] Transmission de l'historique CMD à {NOM_DU_MODELE}...")
-    try:
-        response = requests.post(OLLAMA_URL, json=payload)
-        reponse_ia = response.json().get("response", "")
-        
-        print("\n" + "="*50)
-        print(f"[ANALYSE DE TON CMD PAR L'IA] :\n{reponse_ia}")
-        print("="*50)
+
+"""
+payload = {
+"model": PHI_3.5,
+"prompt": prompt_contexte,
+"stream": False
+ }
+print(f"[Ollama] Transmission de l'historique CMD à {NOM_DU_MODELE}...")
+try:
+response = requests.post(OLLAMA_URL, json=payload)
+reponse_ia = response.json().get("response", "")
+print("\n" + "="*50)
+print(f"[ANALYSE DE TON CMD PAR L'IA] :\n{reponse_ia}")
+print("="*50)
         
         # 4. On sauvegarde définitivement l'analyse et l'historique dans le fichier JSON
         memoire_globale["historique"].append({
