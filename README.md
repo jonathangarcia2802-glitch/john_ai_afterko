@@ -9,38 +9,34 @@ self.historique = self.charger_memoire()
         
 # Message d'accueil officiel du QG
         print(f"\n==================================================")
-        print(f"[SYSTEME] : John AI connecte sur le Vaio.")
-        print(f"[SYSTEME] : Nouvelle ere active - Securite Maximale.")
-        print(f"[SYSTEME] : Memoire vivante chargee ({len(self.historique)} echanges sauves).")
-        print(f"==================================================\n")
+print(f"[SYSTEME] : John AI connecte sur le Vaio.")
+print(f"[SYSTEME] : Nouvelle ere active - Securite Maximale.")
+print(f"[SYSTEME] : Memoire vivante chargee ({len(self.historique)} echanges sauves).")        print(f"==================================================\n")
 def charger_memoire(self):
 # L'IA lit ton fichier sur le PC pour se rappeler de tout votre passe
 if os.path.exists(self.fichier_memoire):
 with open(self.fichier_memoire, "r", encoding="utf-8") as f:
 return f.readlines()
 return []
+
 from pyngrok 
 import ngrok
 ngrok.set_auth_token("3HFNLtAqCVtHmXN63bnfgSAiZMP_3QjGCmTNYJ1wYHW81ECQi.env")
-def enregistrer_echange(self, role, message):
+defenregistrer_echange(self,role,message):
 # Cette fonction grave vos discussions dans le disque dur pour toujours
 with open(self.fichier_memoire, "a", encoding="utf-8") as f:
 f.write(f"{role}: {message}\n")
 self.historique.append(f"{role}: {message}\n")
 def repondre(self, message_utilisateur):
 self.enregistrer_echange("Utilisateur", message_utilisateur)
-        
 # 1. LE MEC DE LA SÉCURITÉ : Il filtre d'abord le message
-        print("\n[MEC DE LA SÉCURITÉ] : Analyse du perimetre et validation de l'ordre...")
-        
+print("\n[MEC DE LA SÉCURITÉ] : Analyse du perimetre et validation de l'ordre...")
 # Déclenchement du code secret "la pièce espagnole"
-if "pièce espagnole.env" in message_utilisateur.lower() or "piece espagnole" in message_utilisateur.lower():
-            print("[MEC DE LA SÉCURITÉ] : CODE SECRET DETECTE ! Synchronisation de la mémoire vive...")
-            reponse = "[L'ALCHIMISTE] Ah, mon pote ! C'est le mot-clé ! Je me rappelle de tout : la fibre, les agents, l'appli Chips et nos délires. Ton bras droit est opérationnel à 100% sur le PC. Le solde est protégé, on avance ensemble !"
-        
-        # 2. L'ALCHIMISTE : Il prend le relais pour les ordres d'information standards
-        elif "ordre" in message_utilisateur.lower() or "commande" in message_utilisateur.lower() or "information" in message_utilisateur.lower():
-            reponse = "[L'ALCHIMISTE] Ordre d'information traite avec succes. Les donnees sont verrouillees et c'est 100% gratuit sur ton ordi."
+if "pièce espagnole.env" in message_utilisateur.lower() or "piece espagnole.env"inmessage_utilisateur.lower():
+print("[MEC DE LA SÉCURITÉ] : CODE SECRET DETECTE ! Synchronisation de la mémoire vive...")
+reponse = "[L'ALCHIMISTE] Ah, mon pote ! C'est le mot-clé ! Je me rappelle de tout : la fibre, les agents,  ensemble !"
+# 2. L'ALCHIMISTE : Il prend le relais pour les ordres d'information standards
+elif "ordre" inmessage_john_ai.lower() or "commande"inmessage_john_ai.lower() or "information"inmessage_utilisateur.lower():reponse = "[L'ALCHIMISTE] Ordre d'information traite avec succes. Les donnees sont verrouillees et c'est 100% gratuit sur ton ordi."
         
         # Réponse générale en mode bras droit
         else:
