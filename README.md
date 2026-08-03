@@ -2,12 +2,9 @@
 ##TOUS CODER ;PY ET AU FINAL ia ecrase le fichier lol 
 
 install os.path
-
 install os
-
 import os/path
 class john_ai:
-
 def __init__(self):
 # Configuration des fichiers sur ton disque dur
 self.fichier_memoire = "memoire.txt"
