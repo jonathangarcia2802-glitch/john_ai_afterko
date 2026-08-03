@@ -11,7 +11,9 @@ sys.stdin = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8')
 class LecteurUniversel:
 def __init__(self, chemin_fichier):
 self.chemin_fichier = chemin_fichier
+
 ##
+
 def lire_et_convertir(self):
 """Lit un fichier texte/python peu importe son format d'origine et gère le contenu"""
 if not os.path.exists(self.chemin_fichier):
