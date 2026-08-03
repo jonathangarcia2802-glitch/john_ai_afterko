@@ -1,15 +1,14 @@
 ##APRES PLUSIEUR JOURS A CODER ALORS JE COUPE DES CHEVEUX PINEE PAR IA JESSAIE DE REMO?TER LA PENTE DOMMAGE POUR NON REUSSIT DE LA COMMMANDE
 ##TOUS CODER ;PY ET AU FINAL ia ecrase le fichier lol 
+
 import os
 class JohnAI:
 def __init__(self):
 # Configuration des fichiers sur ton disque dur
 self.fichier_memoire = "memoire.txt"
 self.historique = self.charger_memoire()
-        
-# Message d'accueil officiel du QG
-        print(f"\n==================================================")
-print(f"[SYSTEME] : John AI connecte sur le Vaio.")
+# Message d'accueil officiel du QG print(f"\n==================================================")
+print(f"[SYSTEME] : john_ai connecte sur le Vaio.")
 print(f"[SYSTEME] : Nouvelle ere active - Securite Maximale.")
 print(f"[SYSTEME] : Memoire vivante chargee ({len(self.historique)} echanges sauves).")        print(f"==================================================\n")
 def charger_memoire(self):
@@ -66,11 +65,10 @@ mar. 28 juil. 14:51 (il y a 6 jours)
 # =====================================================================
 import os
 import sys
-
 class AgentIAAutonome:
-    def __init__(self):
-        self.fichier_memoire = "historique.txt"
-        self.cle_api = "A_REMPLIR" # C'est ici qu'on mettra la clé du cerveau IA
+def __init__(self):
+self.fichier_memoire = "historique.txt"
+self.cle_api = "" # C'est ici qu'on mettra la clé du cerveau IA
         
         print("==================================================")
         print(" PACTE OFFICIEL ET CONTRAT ")
