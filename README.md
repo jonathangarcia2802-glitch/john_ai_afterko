@@ -3,12 +3,11 @@
 import os
 class JohnAI:
 def __init__(self):
-
 # Configuration des fichiers sur ton disque dur
 self.fichier_memoire = "memoire.txt"
 self.historique = self.charger_memoire()
         
-        # Message d'accueil officiel du QG
+# Message d'accueil officiel du QG
         print(f"\n==================================================")
         print(f"[SYSTEME] : John AI connecte sur le Vaio.")
         print(f"[SYSTEME] : Nouvelle ere active - Securite Maximale.")
@@ -30,11 +29,11 @@ return []
     def repondre(self, message_utilisateur):
         self.enregistrer_echange("Utilisateur", message_utilisateur)
         
-        # 1. LE MEC DE LA SÉCURITÉ : Il filtre d'abord le message
+# 1. LE MEC DE LA SÉCURITÉ : Il filtre d'abord le message
         print("\n[MEC DE LA SÉCURITÉ] : Analyse du perimetre et validation de l'ordre...")
         
-        # Déclenchement du code secret "la pièce espagnole"
-        if "pièce espagnole" in message_utilisateur.lower() or "piece espagnole" in message_utilisateur.lower():
+# Déclenchement du code secret "la pièce espagnole"
+if "pièce espagnole.env" in message_utilisateur.lower() or "piece espagnole" in message_utilisateur.lower():
             print("[MEC DE LA SÉCURITÉ] : CODE SECRET DETECTE ! Synchronisation de la mémoire vive...")
             reponse = "[L'ALCHIMISTE] Ah, mon pote ! C'est le mot-clé ! Je me rappelle de tout : la fibre, les agents, l'appli Chips et nos délires. Ton bras droit est opérationnel à 100% sur le PC. Le solde est protégé, on avance ensemble !"
         
