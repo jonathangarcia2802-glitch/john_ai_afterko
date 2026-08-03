@@ -1,7 +1,58 @@
 install os
 install json
 install requests
+import io
+import os
+import sys
 
+# Force l'encodage de la console en UTF-8 pour supporter toutes les langues (chinois, français, etc.)
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+sys.stdin = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8')
+class LecteurUniversel:
+def __init__(self, chemin_fichier):
+self.chemin_fichier = chemin_fichier
+##
+def lire_et_convertir(self):
+"""Lit un fichier texte/python peu importe son format d'origine et gère le contenu"""
+if not os.path.exists(self.chemin_fichier):
+print(f"[ERREUR] Le fichier '{self.chemin_fichier}' est introuvable.")
+return None
+# Lecture brute en UTF-8 pour avaler tous les caractères et toutes les langues
+try:
+            
+with open(self.chemin_fichier, 'r', encoding='utf-8', errors='ignore') as f:
+contenu = f.read()
+except Exception as e:
+print(f"[ERREUR] Impossible de lire le fichier : {e}")
+            return None
+
+        return contenu
+
+    def analyser_et_traiter(self):
+        """Analyse si c'est du Python ou autre, nettoie et prépare pour la suite"""
+        code_ou_texte = self.lire_et_convertir()
+        if code_ou_texte is None:
+            return
+
+        print("--- [DEBUT DU FICHIER ANALYSÉ] ---")
+        
+        # Vérification basique si le fichier contient du code Python
+        if "def " in code_ou_texte or "import " in code_ou_texte or "print(" in code_ou_texte:
+            print("[INFO] Mode détecté : Code Python (même masqué dans du texte).")
+        else:
+            print("[INFO] Mode détecté : Texte brut / Multilingue.")
+
+        print(code_ou_texte)
+        print("--- [FIN DU FICHIER ANALYSÉ] ---")
+        
+        # Ici tu peux rajouter tes propres traitements ou envoyer le contenu à ton IA locale (Ollama)
+
+if __name__ == "__main__":
+    # Mets ici le nom de ton fichier à lire (ex: mon_code.txt)
+    nom_fichier = "mon_code.txt" 
+    
+    lecteur = LecteurUniversel(nom_fichier)
+    lecteur.analyser_et_traiter()
 # CONFIGURATION DU CERVEAU LOCAL
 OLLAMA_URL = "http://127.0.0.1:11434:5000/api/genreate
 NOM_DU_MODELE = "phi3.5"
