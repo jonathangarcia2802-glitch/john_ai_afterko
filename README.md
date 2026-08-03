@@ -1,6 +1,136 @@
 ##APRES PLUSIEUR JOURS A CODER ALORS JE COUPE DES CHEVEUX PINEE PAR IA JESSAIE DE REMO?TER LA PENTE DOMMAGE POUR NON REUSSIT DE LA COMMMANDE
 ##TOUS CODER ;PY ET AU FINAL ia ecrase le fichier lol 
+mport os
 
+class JohnAI:
+def __init__(self):
+# Configuration des fichiers sur ton disque dur
+self.fichier_memoire = "memoire.txt"
+self.historique = self.charger_memoire()
+        
+        # Message d'accueil officiel du QG
+        print(f"\n==================================================")
+        print(f"[SYSTEME] : John AI connecte sur le Vaio.")
+        print(f"[SYSTEME] : Nouvelle ere active - Securite Maximale.")
+        print(f"[SYSTEME] : Memoire vivante chargee ({len(self.historique)} echanges sauves).")
+        print(f"==================================================\n")
+def charger_memoire(self):
+# L'IA lit ton fichier sur le PC pour se rappeler de tout votre passe
+if os.path.exists(self.fichier_memoire):
+with open(self.fichier_memoire, "r", encoding="utf-8") as f:
+return f.readlines()
+return []
+
+    def enregistrer_echange(self, role, message):
+        # Cette fonction grave vos discussions dans le disque dur pour toujours
+        with open(self.fichier_memoire, "a", encoding="utf-8") as f:
+            f.write(f"{role}: {message}\n")
+        self.historique.append(f"{role}: {message}\n")
+
+    def repondre(self, message_utilisateur):
+        self.enregistrer_echange("Utilisateur", message_utilisateur)
+        
+        # 1. LE MEC DE LA SÉCURITÉ : Il filtre d'abord le message
+        print("\n[MEC DE LA SÉCURITÉ] : Analyse du perimetre et validation de l'ordre...")
+        
+        # Déclenchement du code secret "la pièce espagnole"
+        if "pièce espagnole" in message_utilisateur.lower() or "piece espagnole" in message_utilisateur.lower():
+            print("[MEC DE LA SÉCURITÉ] : CODE SECRET DETECTE ! Synchronisation de la mémoire vive...")
+            reponse = "[L'ALCHIMISTE] Ah, mon pote ! C'est le mot-clé ! Je me rappelle de tout : la fibre, les agents, l'appli Chips et nos délires. Ton bras droit est opérationnel à 100% sur le PC. Le solde est protégé, on avance ensemble !"
+        
+        # 2. L'ALCHIMISTE : Il prend le relais pour les ordres d'information standards
+        elif "ordre" in message_utilisateur.lower() or "commande" in message_utilisateur.lower() or "information" in message_utilisateur.lower():
+            reponse = "[L'ALCHIMISTE] Ordre d'information traite avec succes. Les donnees sont verrouillees et c'est 100% gratuit sur ton ordi."
+        
+        # Réponse générale en mode bras droit
+        else:
+            reponse = "[John AI] Recu chef. Je reste en position de garde a tes cotes. Dis-moi ce qu'on execute."
+            
+        print(reponse)
+        self.enregistrer_echange("JohnAI", reponse)
+
+# Lancement du moteur autonome
+if __name__ == "__main__":
+    bot = JohnAI()
+    print("Tape 'la pièce espagnole' pour tester ton code secret, ou écris ton ordre.")
+    while True:
+        commande = input("\nOrdre (ou 'quitter') : ")
+        if commande.lower() == 'quitter':
+            print("[SYSTEME] Fermeture du QG. Toutes les donnees sont sauvegardees.")
+            break
+        bot.repondre(commande)
+
+
+L'inconnu Op <jonathan.garcia.28.02@gmail.com>
+mar. 28 juil. 14:51 (il y a 6 jours)
+À moi
+
+# =====================================================================
+# AGENT IA AUTONOME : BRAS DROIT & BRAS GAUCHE CONNECTÉS
+# =====================================================================
+import os
+import sys
+
+class AgentIAAutonome:
+    def __init__(self):
+        self.fichier_memoire = "historique.txt"
+        self.cle_api = "A_REMPLIR" # C'est ici qu'on mettra la clé du cerveau IA
+        
+        print("==================================================")
+        print(" PACTE OFFICIEL ET CONTRAT ")
+        print("==================================================")
+        print("[1. AUTORITÉ SUPRÊME ET HIÉRARCHIE]")
+        print("- Le créateur de ce document est le patron.")
+        print("- L'IA lui doit une obéissance totale.")
+        print("==================================================")
+        print("[SYSTEME] : Agent IA en cours de déploiement...")
+        print("[SYSTEME] : Prêt à recevoir les ordres du patron.")
+        print("==================================================")
+
+    def graver_disque_dur(self, role, message):
+        with open(self.fichier_memoire, "a", encoding="utf-8") as f:
+            f.write(f"{role}: {message}\n")
+
+    def generer_intelligence(self, message_patron):
+        """Cette fonction appellera le cerveau de l'IA quand la clé sera mise"""
+        if self.cle_api == "A_REMPLIR":
+            return "[L'ALCHIMISTE] Mode local : Système stable. Prêt à connecter le grand cerveau IA."
+        
+        # Le code de connexion à l'IA se déclenchera ici
+        return "[AGENT CONNECTÉ] Réflexion en cours..."
+
+    def analyser_ordre(self, message_utilisateur):
+        self.graver_disque_dur("Patron", message_utilisateur)
+        msg_lower = message_utilisateur.lower()
+        
+        # BRAS GAUCHE : LE MEC DE LA SÉCURITÉ
+print("\n[MEC DE LA SÉCURITÉ] : Analyse du périmètre...")
+if "la pièce espagnole" in msg_lower or "piece espagnole" in msg_lower:
+print("[MEC DE LA SÉCURITÉ] : CODE SECRET DETECTE ! Verrouillage activé.")
+reponse = "[L'ALCHIMISTE] Code secret validé. Je suis à ton écoute."
+self.graver_disque_dur("L'ALCHIMISTE", reponse)
+return reponse
+# BRAS DROIT : L'ALCHIMISTE (INTELLIGENCE)
+reponse_ia = self.generer_intelligence(message_utilisateur)
+self.graver_disque_dur("L'ALCHIMISTE", reponse_ia)
+return reponse_ia
+
+if __name__ == "__main__":
+    mon_agent = AgentIAAutonome()
+    
+    while True:
+        try:
+            ordre = input("\nVotre ordre, patron (ou 'quitter') : ")
+            if ordre.lower() == "quitter":
+                print("[SYSTEME] Fermeture de l'agent IA.")
+                break
+            if not ordre.strip():
+                continue
+            
+            resultat = mon_agent.analyser_ordre(ordre)
+            print(resultat)
+        except KeyboardInterrupt:
+            break
 
 
 
