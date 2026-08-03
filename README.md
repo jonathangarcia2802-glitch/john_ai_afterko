@@ -1,6 +1,6 @@
 install os
 install json
-install requests
+IMPORT requests
 import io
 import os
 import sys
@@ -239,17 +239,17 @@ def sauvegarder_cerveau(cerveau: CerveauCentral):
 
 # LE MOTEUR VOCAL POUR DICTER LES IDÉES REÇUES
 def diffuser_vocal(texte):
-    def _parler():
-        engine = pyttsx3.init()
-        voices = engine.getProperty('voices')
-        for voice in voices:
-            if "FR" in voice.id.upper():
-                engine.setProperty('voice', voice.id)        
-             break
-        engine.setProperty('rate', 155)
-        engine.say(texte)
-        engine.runAndWait()
-    threading.Thread(target=_parler).start()
+def _parler():
+engine = pyttsx3.init()
+voices = engine.getProperty('voices')
+for voice in voices:
+if "FR" in voice.id.upper():
+engine.setProperty('voice', voice.id)        
+break
+engine.setProperty('rate', 155)
+engine.say(texte)
+engine.runAndWait()
+threading.Thread(target=_parler).start()
 
 # Connexion à l'intelligence de base (Google GenAI)
 client = genai.Client()
