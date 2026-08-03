@@ -1,10 +1,10 @@
 [cerveau.py](https://github.com/user-attachments/files/30653508/cerveau.py)
 # fuzzy-couscous
 
-import os
-import json
-import requests
-import subprocess
+install os
+install json
+install requests
+
 
 # CONFIGURATION DU CERVEAU LOCAL
 
@@ -26,6 +26,7 @@ if os.path.exists(FICHIER_MEMOIRE):
 with open(FICHIER_MEMOIRE, "r", encoding="utf-8") as f:
 return json.load(f)
 return {"historique": []}
+
 def sauvegarder_memoire(memoire):
 with open(FICHIER_MEMOIRE, "w", encoding="utf-8") as f:
 json.dump(memoire, f, ensure_ascii=False, indent=4)
