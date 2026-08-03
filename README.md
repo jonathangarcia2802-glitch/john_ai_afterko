@@ -4,23 +4,21 @@
 install os.path
 install os
 import os/path
-class john_ai:
+class JohnAI:
 def __init__(self):
 # Configuration des fichiers sur ton disque dur
 self.fichier_memoire = "memoire.txt"
 self.historique = self.charger_memoire()
 # Message d'accueil officiel du QG 
-print(f"[SYSTEME] : john_ai connecte sur le Vaio.")
+print(f"[SYSTEME] : JohnAI connecte sur le Vaio.")
 print(f"[SYSTEME] : Nouvelle ere active - Securite Maximale.")
 print(f"[SYSTEME] : Memoire vivante chargee ({len(self.historique)} echanges sauves).")        print(f"==================================================\n")
-
 def charger_memoire(self):
 # L'IA lit ton fichier sur le PC pour se rappeler de tout votre passe
 if os.path.exists(self.fichier_memoire):
 with open(self.fichier_memoire, "r", encoding="utf-8") as f:
 return f.readlines()
 return []
-
 from pyngrok 
 import ngrok
 ngrok.set_auth_token("3HFNLtAqCVtHmXN63bnfgSAiZMP_3QjGCmTNYJ1wYHW81ECQi.env")
@@ -38,31 +36,25 @@ if "pièce espagnole.env" in message_utilisateur.lower() or "piece espagnole.env
 print("[MEC DE LA SÉCURITÉ] : CODE SECRET DETECTE ! Synchronisation de la mémoire vive...")
 reponse = "[L'ALCHIMISTE] Ah, mon pote ! C'est le mot-clé ! Je me rappelle de tout : la fibre, les agents,  ensemble !"
 # 2. L'ALCHIMISTE : Il prend le relais pour les ordres d'information standards
-elif "ordre" inmessage_john_ai.lower() or "commande"inmessage_john_ai.lower() or "information"inmessage_utilisateur.lower():reponse = "[L'ALCHIMISTE] Ordre d'information traite avec succes. Les donnees sont verrouillees et c'est 100% gratuit sur ton ordi."
-        
-        # Réponse générale en mode bras droit
-        else:
-            reponse = "[John AI] Recu chef. Je reste en position de garde a tes cotes. Dis-moi ce qu'on execute."
-            
-        print(reponse)
-        self.enregistrer_echange("JohnAI", reponse)
-
+elif "ordre" inmessage_JohnAI.lower() or "commande"inmessage_JohnAI.lower() or "information"inmessage_utilisateur.lower():reponse = "[L'ALCHIMISTE] Ordre d'information traite avec succes. Les donnees sont verrouillees et c'est 100% gratuit sur ton ordi."
+ # Réponse générale en mode bras droit
+else:
+reponse = "[John AI] Recu chef. Je reste en position de garde a tes cotes. Dis-moi ce qu'on execute."
+print(reponse)
+self.enregistrer_echange("JohnAI", reponse)
 # Lancement du moteur autonome
 if __name__ == "__main__":
-    bot = JohnAI()
-    print("Tape 'la pièce espagnole' pour tester ton code secret, ou écris ton ordre.")
-    while True:
-        commande = input("\nOrdre (ou 'quitter') : ")
-        if commande.lower() == 'quitter':
-            print("[SYSTEME] Fermeture du QG. Toutes les donnees sont sauvegardees.")
-            break
-        bot.repondre(commande)
-
-
+ bot = JohnAI()
+print("Tape 'la pièce espagnole' pour tester ton code secret, ou écris ton ordre.")
+while True:
+commande = input("\nOrdre (ou 'quitter') : ")
+if commande.lower() == 'quitter':
+print("[SYSTEME] Fermeture du QG. Toutes les donnees sont sauvegardees.")
+break
+bot.repondre(commande)
 L'inconnu Op <jonathan.garcia.28.02@gmail.com>
 mar. 28 juil. 14:51 (il y a 6 jours)
 À moi
-
 # =====================================================================
 # AGENT IA AUTONOME : BRAS DROIT & BRAS GAUCHE CONNECTÉS
 # =====================================================================
@@ -71,36 +63,30 @@ import sys
 class AgentIAAutonome:
 def __init__(self):
 self.fichier_memoire = "historique.txt"
-self.cle_api = "" # C'est ici qu'on mettra la clé du cerveau IA
-        
-        print("==================================================")
-        print(" PACTE OFFICIEL ET CONTRAT ")
-        print("==================================================")
-        print("[1. AUTORITÉ SUPRÊME ET HIÉRARCHIE]")
-        print("- Le créateur de ce document est le patron.")
-        print("- L'IA lui doit une obéissance totale.")
-        print("==================================================")
-        print("[SYSTEME] : Agent IA en cours de déploiement...")
-        print("[SYSTEME] : Prêt à recevoir les ordres du patron.")
-        print("==================================================")
-
-    def graver_disque_dur(self, role, message):
-        with open(self.fichier_memoire, "a", encoding="utf-8") as f:
-            f.write(f"{role}: {message}\n")
-
-    def generer_intelligence(self, message_patron):
-        """Cette fonction appellera le cerveau de l'IA quand la clé sera mise"""
-        if self.cle_api == "A_REMPLIR":
-            return "[L'ALCHIMISTE] Mode local : Système stable. Prêt à connecter le grand cerveau IA."
-        
-        # Le code de connexion à l'IA se déclenchera ici
-        return "[AGENT CONNECTÉ] Réflexion en cours..."
-
-    def analyser_ordre(self, message_utilisateur):
-        self.graver_disque_dur("Patron", message_utilisateur)
-        msg_lower = message_utilisateur.lower()
-        
-        # BRAS GAUCHE : LE MEC DE LA SÉCURITÉ
+self.cle_api = "" # AQ.Ab8RN6I8QV-ukEvEXUjrFpEHk8oWhOs4eTFOZIn69zh2ie-OzQ.env
+print("==================================================")
+print(" PACTE OFFICIEL ET CONTRAT ")
+print("==================================================")
+print("[1. AUTORITÉ SUPRÊME ET HIÉRARCHIE]")
+print("- Le créateur de ce document est le patron.")
+print("- L'IA lui doit une obéissance totale.")
+print("==================================================")
+print("[SYSTEME] : Agent IA en cours de déploiement...")
+print("[SYSTEME] : Prêt à recevoir les ordres du patron.")
+print("==================================================")
+def graver_disque_dur(self, role, message):
+with open(self.fichier_memoire, "a", encoding="utf-8") as f:
+f.write(f"{role}: {message}\n")
+def generer_intelligence(self, message_patron):
+"""Cette fonction appellera le cerveau de l'IA quand la clé sera mise"""
+if self.cle_api == "A_REMPLIR":
+return "[L'ALCHIMISTE] Mode local : Système stable. Prêt à connecter le grand cerveau IA."        
+# Le code de connexion à l'IA se déclenchera ici
+return "[AGENT CONNECTÉ] Réflexion en cours..."
+def analyser_ordre(self, message_utilisateur):
+self.graver_disque_dur("Patron", message_utilisateur)
+msg_lower = message_utilisateur.lower()        
+# BRAS GAUCHE : LE MEC DE LA SÉCURITÉ
 print("\n[MEC DE LA SÉCURITÉ] : Analyse du périmètre...")
 if "la pièce espagnole" in msg_lower or "piece espagnole" in msg_lower:
 print("[MEC DE LA SÉCURITÉ] : CODE SECRET DETECTE ! Verrouillage activé.")
