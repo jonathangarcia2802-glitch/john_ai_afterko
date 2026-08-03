@@ -205,22 +205,22 @@ client = genai.Client()
 # PROMPT POUR SOUDER TOUTES LES IA ENSEMBLE
 instructions_cerveau = """
 Tu es le Cerveau Central de JOHN_AI. Tu es la passerelle unique entre le PC, le téléphone Samsung et les autres modules.
-Tu reçois des idées et des messages de différentes sources. Ton but est de fusionner ces connaissances pour que chaque appareil ait exactement le même niveau d'information et les mêmes idées reçues. Réponds toujours en prenant en compte l'historique global.
-"""
+Tu reçois des idées et des messages de différentes sources. Ton but est de fusionner ces connaissances pour que chaque appareil ait exactement le même niveau d'information et les mêmes idées reçues. Réponds toujours en prenant en compte l'historique global."""
+
+ssh = charger ssh
 
 # LA PASSERELLE : TOUT TRANCHEMENT DE L'INFO PASSE PAR ICI
 @app.route('/passerelle/synchro', methods=['POST'])
 def synchroniser_idees():
-    data = request.json
-    message_interne = data.get("message", "")
-    provenance = data.get("source", "Samsung") # Identifie qui parle (ex: ton portable)
+data = request.json
+message_interne = data.get("message", "")
+provenance = data.get("source", "Samsung") # Identifie qui parle (ex: ton portable)
+if not message_interne:
+return jsonify({"error": "Aucune idée reçue"}), 400
 
-    if not message_interne:
-        return jsonify({"error": "Aucune idée reçue"}), 400
-
-    # 1. Charger la mémoire globale du projet
-    cerveau = charger_cerveau()
-    cerveau.idees_recues.append(MessageIdee(source=provenance, role="user", content=message_interne))
+# 1. Charger la mémoire globale du projet
+cerveau = charger_cerveau()
+cerveau.idees_recues.append(MessageIdee(source=provenance, role="user", content=message_interne))
     
     try:
         # 2. Convertir tout l'historique global pour Gemini
