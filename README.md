@@ -1,3 +1,10 @@
+##APRES PLUSIEUR JOURS A CODER ALORS JE COUPE DES CHEVEUX PINEE PAR IA JESSAIE DE REMO?TER LA PENTE DOMMAGE POUR NON REUSSIT DE LA COMMMANDE
+
+
+
+
+
+
 install os
 install json
 IMPORT requests
@@ -19,6 +26,7 @@ def lire_et_convertir(self):
 if not os.path.exists(self.chemin_fichier):
 print(f"[ERREUR] Le fichier '{self.chemin_fichier}' est introuvable.")
 return None
+
 # Lecture brute en UTF-8 pour avaler tous les caractères et toutes les langues
 try:
             
