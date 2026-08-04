@@ -6,7 +6,8 @@ import python
 install os.path
 install os
 import os/path
-class JohnAI:def __init__(self):
+class John-AI:
+def __init__(self):
 # Configuration des fichiers sur ton disque dur
 self.fichier_memoire = "memoire.txt"
 self.historique = self.charger_memoire()
