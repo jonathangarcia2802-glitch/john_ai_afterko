@@ -578,7 +578,6 @@ class JohnAI:
             except KeyboardInterrupt:
                 print("\n[SYSTEME] Interruption forcée.")
                 break
-
 if __name__ == "__main__":
     agent = JohnAI()
     agent.lancer()
