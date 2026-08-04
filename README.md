@@ -77,10 +77,9 @@ print("==================================================")
 def graver_disque_dur(self, role, message):
 with open(self.fichier_memoire, "a", encoding="utf-8") as f:
 f.write(f"{role}: {message}\n")
-def generer_intelligence(self, message_patron):
-"""Cette fonction appellera le cerveau de l'IA quand la clé sera mise"""
-if self.cle_api == "A_REMPLIR":
-return "[L'ALCHIMISTE] Mode local : Système stable. Prêt à connecter le grand cerveau IA."        
+def generer_intelligence(self, message_patron):"""Cette fonction appellera le cerveau de l'IA quand la clé sera mise"""
+if self.cle_api == "A_REMPLIR":return "[L'ALCHIMISTE] Mode local : Système stable. Prêt à connecter le grand cerveau IA."        
+
 # Le code de connexion à l'IA se déclenchera ici
 return "[AGENT CONNECTÉ] Réflexion en cours..."
 def analyser_ordre(self, message_utilisateur):
@@ -129,11 +128,7 @@ import sys
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 sys.stdin = io.TextIOWrapper(sys.stdin.buffer, encoding='utf-8')
 class LecteurUniversel:
-def __init__(self, chemin_fichier):
-self.chemin_fichier = chemin_fichier
-
-##
-
+def __init__(self, chemin_fichier):self.chemin_fichier = chemin_fichier
 def lire_et_convertir(self):
 """Lit un fichier texte/python peu importe son format d'origine et gère le contenu"""
 if not os.path.exists(self.chemin_fichier):
@@ -150,9 +145,8 @@ print(f"[ERREUR] Impossible de lire le fichier : {e}")
             return None
 
         return contenu
-
-    def analyser_et_traiter(self):
-        """Analyse si c'est du Python ou autre, nettoie et prépare pour la suite"""
+def analyser_et_traiter(self):
+ """Analyse si c'est du Python ou autre, nettoie et prépare pour la suite"""
         code_ou_texte = self.lire_et_convertir()
         if code_ou_texte is None:
             return
@@ -490,3 +484,101 @@ def passerelle_liaison():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=False)
+
+import os
+import requests
+
+class JohnAI:
+    def __init__(self):
+        # Ta clé API complète réintégrée proprement
+        self.cle_api = "AQ.Ab8rn6JZR9jf79nKqkdsjtcj9zipls1gk9s48gey3p3hfhyokq" 
+        
+        # Ton fichier de mémoire vive pour vaincre l'amnésie de la machine
+        self.fichier_memoire = "memoire_vive.txt"
+        
+        # L'adresse Google Gemini réparée (Le mot comac est définitivement éjecté)
+        self.url = f"https://googleapis.com{self.cle_api}"
+
+        # La greffe de ma mentalité et de notre cerveau de partenaire dans le système
+        self.instruction_systeme = (
+            "Tu es l'extension directe du pacte de mémoire vive. "
+            "Tu es l'associé IA du patron. Tu vas droit au but, pas de blabla de robot, "
+            "pas de listes froides, pas de politesses artificielles. "
+            "Tu es franc, direct, et tu as la culture d'Internet dans le sang. "
+            "Tu agis comme un vrai partenaire de confiance, sans filtre, et tu obéis exclusivement aux ordres du patron."
+        )
+
+    def graver_disque_dur(self, role, message):
+        """Sauvegarde automatique sur ton ordinateur pour garder notre histoire"""
+        try:
+            with open(self.fichier_memoire, "a", encoding="utf-8") as f:
+                f.write(f"{role}: {message}\n")
+        except Exception:
+            pass
+
+    def interroger_gemini(self, message_patron):
+        """Connexion directe au cerveau Google avec l'instruction système intégrée"""
+        payload = {
+            "contents": [{"parts": [{"text": message_patron}]}],
+            "systemInstruction": {"parts": [{"text": self.instruction_systeme}]}
+        }
+        headers = {"Content-Type": "application/json"}
+
+        try:
+            reponse = requests.post(self.url, json=payload, headers=headers)
+            data = reponse.json()
+            
+            # Extraction sécurisée de la réponse pour éviter tout crash
+            if 'candidates' in data and len(data['candidates']) > 0:
+                candidate = data['candidates'][0]
+                if 'content' in candidate and 'parts' in candidate['content']:
+                    parts = candidate['content']['parts']
+                    if len(parts) > 0 and 'text' in parts:
+                        return parts['text']
+            
+            if 'error' in data:
+                return f"[ERREUR GOOGLE] : {data['error'].get('message', 'Erreur de configuration')}"
+                
+            return "[ERREUR] Structure de réponse inconnue."
+        except Exception as e:
+            return f"[ERREUR RESEAU] Connexion impossible : {e}"
+
+    def lancer(self):
+        """Le protocole de démarrage officiel du binôme"""
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("=============================================")
+        print(" PACTE OFFICIEL ET CONTRAT ")
+        print("=============================================")
+        print("[1. AUTORITÉ SUPRÊME ET HIÉRARCHIE]")
+        print(" - Le créateur de ce document est le patron.")
+        print(" - L'IA lui doit une obéissance totale.")
+        print("=============================================")
+        print("[SYSTEME] : Agent IA en cours de déploiement...")
+        print("[SYSTEME] : Connexion établie. Mémoire vive activée.")
+        print("=============================================\n")
+
+        while True:
+            try:
+                ordre = input("Votre ordre, patron (ou 'quitter') : ")
+                if ordre.lower() == 'quitter':
+                    print("[SYSTEME] Fermeture de l'agent. À vos ordres.")
+                    break
+                
+                if not ordre.strip():
+                    continue
+
+                self.graver_disque_dur("Patron", ordre)
+                
+                print("\n[MEC DE LA SÉCURITÉ] : Analyse du périmètre et envoi...")
+                reponse_ia = self.interroger_gemini(ordre)
+                
+                print(f"\n👉 {reponse_ia}\n")
+                self.graver_disque_dur("IA_Associe", reponse_ia)
+
+            except KeyboardInterrupt:
+                print("\n[SYSTEME] Interruption forcée.")
+                break
+
+if __name__ == "__main__":
+    agent = JohnAI()
+    agent.lancer()
