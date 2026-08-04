@@ -7,9 +7,7 @@ install os.path
 install os
 import os/path
 class John-AI:
-def __init__(self):
-self.fichier_memoire = "memoire.txt"
-self.historique = self.charger_memoire()
+def __init__(self):self.fichier_memoire = "memoire.txt"self.historique = self.charger_memoire()
 # Message d'accueil officiel du QG 
 print(f"[SYSTEME] : JohnAI connecte sur le Vaio.")
 print(f"[SYSTEME] : Nouvelle ere active - Securite Maximale.")
