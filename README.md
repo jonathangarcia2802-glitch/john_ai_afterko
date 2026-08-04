@@ -2,6 +2,7 @@
 ##TOUS CODER ;PY ET AU FINAL ia ecrase le fichier lol 
 
 pip install python
+
 import python
 install os.path
 install os
