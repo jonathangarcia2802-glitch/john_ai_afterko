@@ -1,15 +1,13 @@
 ##APRES PLUSIEUR JOURS A CODER ALORS JE COUPE DES CHEVEUX PINEE PAR IA JESSAIE DE REMO?TER LA PENTE DOMMAGE POUR NON REUSSIT DE LA COMMMANDE
 ##TOUS CODER ;PY ET AU FINAL ia ecrase le fichier lol 
 
-pip install python
-
+install python
 import python
 install os.path
 install os
 import os/path
 class John-AI:
 def __init__(self):
-# Configuration des fichiers sur ton disque dur
 self.fichier_memoire = "memoire.txt"
 self.historique = self.charger_memoire()
 # Message d'accueil officiel du QG 
