@@ -6,14 +6,15 @@ import python
 install os.path
 install os
 import os/path
+
 class John-AI:
 def __init__(self):self.fichier_memoire = "memoire.txt"self.historique = self.charger_memoire()
 # Message d'accueil officiel du QG 
 print(f"[SYSTEME] : JohnAI connecte sur le Vaio.")
 print(f"[SYSTEME] : Nouvelle ere active - Securite Maximale.")
 print(f"[SYSTEME] : Memoire vivante chargee ({len(self.historique)} echanges sauves).")        print(f"==================================================\n")
-
 def charger_memoire(self):
+
 # L'IA lit ton fichier sur le PC pour se rappeler de tout votre passe
 if os.path.exists(self.fichier_memoire):
 with open(self.fichier_memoire, "r", encoding="utf-8") as f:
