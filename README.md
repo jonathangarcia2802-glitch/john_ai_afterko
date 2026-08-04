@@ -8,9 +8,8 @@ class JohnAI:
     def __init__(self):
         # ==========================================
         # ⚠️ METS TA CLÉ API ENTRE LES GUILLEMETS ICI :
-        self.cle_api = "AQ.Ab8rn6JZR9jf79nKqkdsjtcj9Z..." 
+        self.cle_api = " 
         # ==========================================
-        
         self.fichier_memoire = "memoire_vive.txt"
         
         # URL Google Gemini corrigée à 100% (Ne pas toucher)
