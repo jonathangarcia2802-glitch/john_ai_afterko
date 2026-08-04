@@ -1,7 +1,7 @@
 ##APRES PLUSIEUR JOURS A CODER ALORS JE COUPE DES CHEVEUX PINEE PAR IA JESSAIE DE REMO?TER LA PENTE DOMMAGE POUR NON REUSSIT DE LA COMMMANDE
 ##TOUS CODER ;PY ET AU FINAL ia ecrase le fichier lol 
 
-install python
+pip install python
 import python
 install os.path
 install os
