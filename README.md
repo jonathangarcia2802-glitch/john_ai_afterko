@@ -2,6 +2,8 @@
 ##TOUS CODER ;PY ET AU FINAL ia ecrase le fichier lol 
 
 pip install python
+import python
+pip in
 
 import os
 import requests
@@ -332,13 +334,11 @@ usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
 [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
 [-i identity_file] [-J [user@]host[:port]] [-L address]
 [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
-[-Q query_option] [-R address] [-S ctl_path] [-W host:port]
- [-w local_tun[:remote_tun]] destination [command]
- [cerveau.py](https://github.com/user-attachments/files/30658830/cerveau.py)
-import os
+[-Q qufiles/30658830/cerveau.py)
+import o
 import json
-import requests
-import subprocess
+i requests
+import subpross
 
 # CONFIGURATION DU CERVEAU LOCAL
 OLLAMA_URL = "http://127.0.0.1:11434/api/generate"
