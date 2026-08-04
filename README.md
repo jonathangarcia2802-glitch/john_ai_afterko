@@ -1,6 +1,6 @@
 ##APRES PLUSIEUR JOURS A CODER ALORS JE COUPE DES CHEVEUX PINEE PAR IA JESSAIE DE REMO?TER LA PENTE DOMMAGE POUR NON REUSSIT DE LA COMMMANDE
 ##TOUS CODER ;PY ET AU FINAL ia ecrase le fichier lol 
-
+install python
 install os.path
 install os
 import os/path
@@ -74,6 +74,7 @@ print("==================================================")
 print("[SYSTEME] : Agent IA en cours de déploiement...")
 print("[SYSTEME] : Prêt à recevoir les ordres du patron.")
 print("==================================================")
+
 def graver_disque_dur(self, role, message):
 with open(self.fichier_memoire, "a", encoding="utf-8") as f:
 f.write(f"{role}: {message}\n")
