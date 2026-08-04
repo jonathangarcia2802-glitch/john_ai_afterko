@@ -9,7 +9,9 @@ install os
 import os/path
 
 class John-AI:
-def __init__(self):self.fichier_memoire = "memoire.txt"self.historique = self.charger_memoire()
+def __init__(self):
+self.fichier_memoire = "memoire.txt"self.historique = self.
+charger_memoire()
 # Message d'accueil officiel du QG 
 print(f"[SYSTEME] : JohnAI connecte sur le Vaio.")
 print(f"[SYSTEME] : Nouvelle ere active - Securite Maximale.")
@@ -24,13 +26,14 @@ return []
 from pyngrok 
 import ngrok
 ngrok.set_auth_token("3HFNLtAqCVtHmXN63bnfgSAiZMP_3QjGCmTNYJ1wYHW81ECQi.env")
-defenregistrer_echange(self,role,message):
+def_enregistrer_echange(self,role,message):
+
 # Cette fonction grave vos discussions dans le disque dur pour toujours
 with open(self.fichier_memoire, "a", encoding="utf-8") as f:
 f.write(f"{role}: {message}\n")
 self.historique.append(f"{role}: {message}\n")
-def repondre(self, message_utilisateur):
-self.enregistrer_echange("Utilisateur", message_utilisateur)
+def repondre(self, message_utilisateur):self.enregistrer_echange("Utilisateur", message_utilisateur)
+
 # 1. LE MEC DE LA SÉCURITÉ : Il filtre d'abord le message
 print("\n[MEC DE LA SÉCURITÉ] : Analyse du perimetre et validation de l'ordre...")
 # Déclenchement du code secret "la pièce espagnole"
@@ -40,9 +43,7 @@ reponse = "[L'ALCHIMISTE] Ah, mon pote ! C'est le mot-clé ! Je me rappelle de t
 # 2. L'ALCHIMISTE : Il prend le relais pour les ordres d'information standards
 elif "ordre" inmessage_JohnAI.lower() or "commande"inmessage_JohnAI.lower() or "information"inmessage_utilisateur.lower():reponse = "[L'ALCHIMISTE] Ordre d'information traite avec succes. Les donnees sont verrouillees et c'est 100% gratuit sur ton ordi."
  # Réponse générale en mode bras droit
-else:
-reponse = "[John AI] Recu chef. Je reste en position de garde a tes cotes. Dis-moi ce qu'on execute."
-print(reponse)
+else:reponse = "[John AI] Recu chef. Je reste en position de garde a tes cotes. Dis-moi ce qu'on execute."print(reponse)
 self.enregistrer_echange("JohnAI", reponse)
 # Lancement du moteur autonome
 if __name__ == "__main__":
@@ -51,12 +52,9 @@ print("Tape 'la pièce espagnole' pour tester ton code secret, ou écris ton ord
 while True:
 commande = input("\nOrdre (ou 'quitter') : ")
 if commande.lower() == 'quitter':
-print("[SYSTEME] Fermeture du QG. Toutes les donnees sont sauvegardees.")
-break
-bot.repondre(commande)
+print("[SYSTEME] Fermeture du QG. Toutes les donnees sont sauvegardees.")breakbot.repondre(commande)
 L'inconnu Op <jonathan.garcia.28.02@gmail.com>
-mar. 28 juil. 14:51 (il y a 6 jours)
-À moi
+mar. 28 juil. 14:51 (il y a 6 jours)À moi
 # =====================================================================
 # AGENT IA AUTONOME : BRAS DROIT & BRAS GAUCHE CONNECTÉS
 # =====================================================================
@@ -76,7 +74,6 @@ print("==================================================")
 print("[SYSTEME] : Agent IA en cours de déploiement...")
 print("[SYSTEME] : Prêt à recevoir les ordres du patron.")
 print("==================================================")
-
 def graver_disque_dur(self, role, message):
 with open(self.fichier_memoire, "a", encoding="utf-8") as f:
 f.write(f"{role}: {message}\n")
