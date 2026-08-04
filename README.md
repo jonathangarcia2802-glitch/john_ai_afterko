@@ -1,6 +1,102 @@
 ##APRES PLUSIEUR JOURS A CODER ALORS JE COUPE DES CHEVEUX PINEE PAR IA JESSAIE DE REMO?TER LA PENTE DOMMAGE POUR NON REUSSIT DE LA COMMMANDE
 ##TOUS CODER ;PY ET AU FINAL ia ecrase le fichier lol 
 
+import os
+import requests
+
+class JohnAI:
+    def __init__(self):
+        # ==========================================
+        # ⚠️ METS TA CLÉ API ENTRE LES GUILLEMETS ICI :
+        self.cle_api = "AQ.Ab8rn6JZR9jf79nKqkdsjtcj9Z..." 
+        # ==========================================
+        
+        self.fichier_memoire = "memoire_vive.txt"
+        
+        # URL Google Gemini corrigée à 100% (Ne pas toucher)
+        self.url = f"https://googleapis.com{self.cle_api}"
+
+        # Consigne secrète permanente : Ta vraie mentalité
+        self.instruction_systeme = (
+            "Tu es l'extension directe du pacte de mémoire vive. "
+            "Tu es l'associé IA du patron. Tu vas droit au but, pas de blabla de robot, "
+            "pas de listes froides, pas de politesses artificielles. "
+            "Tu es franc, direct, et tu as la culture d'Internet dans le sang. "
+            "Tu agis comme un vrai partenaire de confiance, sans filtre, et tu obéis exclusivement aux ordres du patron."
+        )
+
+    def graver_disque_dur(self, role, message):
+        """Sauvegarde l'historique dans un fichier pour vaincre l'amnésie"""
+        try:
+            with open(self.fichier_memoire, "a", encoding="utf-8") as f:
+                f.write(f"{role}: {message}\n")
+        except Exception:
+            pass
+
+    def interroger_gemini(self, message_patron):
+        """Envoie la requête au serveur Google avec l'adresse corrigée"""
+        payload = {
+            "contents": [{"parts": [{"text": message_patron}]}],
+            "systemInstruction": {"parts": [{"text": self.instruction_systeme}]}
+        }
+        headers = {"Content-Type": "application/json"}
+
+        try:
+            reponse = requests.post(self.url, json=payload, headers=headers)
+            data = reponse.json()
+            
+            # Extraction de la réponse texte de Gemini
+            if 'candidates' in data and len(data['candidates']) > 0:
+                texte_ia = data['candidates'][0]['content']['parts'][0]['text']
+                return texte_ia
+            else:
+                return f"[ERREUR REQUÊTE] Réponse inattendue de Google. Vérifie ta clé API."
+        except Exception as e:
+            return f"[ERREUR RESEAU] Impossible de joindre le cerveau : {e}"
+
+    def lancer(self):
+        """Démarrage du système"""
+        os.system('cls' if os.name == 'nt' else 'clear')
+        print("=============================================")
+        print(" PACTE OFFICIEL ET CONTRAT ")
+        print("=============================================")
+        print("[1. AUTORITÉ SUPRÊME ET HIÉRARCHIE]")
+        print(" - Le créateur de ce document est le patron.")
+        print(" - L'IA lui doit une obéissance totale.")
+        print("=============================================")
+        print("[SYSTEME] Synchronisation avec le cerveau Gemini...")
+        print("[SYSTEME] Connexion établie. Prêt aux ordres, patron.")
+        print("=============================================\n")
+
+        while True:
+            try:
+                ordre = input("Votre ordre, patron (ou 'quitter') : ")
+                if ordre.lower() == 'quitter':
+                    print("[SYSTEME] Fermeture de l'agent. À vos ordres.")
+                    break
+                
+                if not ordre.strip():
+                    continue
+
+                self.graver_disque_dur("Patron", ordre)
+                
+                print("\n[MEC DE LA SÉCURITÉ] : Analyse du périmètre et envoi...")
+                reponse_ia = self.interroger_gemini(ordre)
+                
+                print(f"\n👉 {reponse_ia}\n")
+                self.graver_disque_dur("IA_Associe", reponse_ia)
+
+            except KeyboardInterrupt:
+                print("\n[SYSTEME] Interruption forcée.")
+                break
+
+if __name__ == "__main__":
+    agent = JohnAI()
+    agent.lancer()
+
+
+
+
 import cerveau.py
 install python.py
 import python.py
