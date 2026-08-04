@@ -21,3 +21,19 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 this people stole me and hack me my work 
 6b35a372c94a7ea4e1357c6b9aefd42da4dd3f17
+
+
+git clone https://huggingface.co/spaces/Jh848skaoaooookksdjdksozozjvvhhjh839394949/john_ai
+cd john_ai
+
+python -m venv env
+source env/bin/activate
+
+
+pip install -r requirements.txt
+python app.py
+
+
+
+
+reg add "HKCU\Software\Policies\Microsoft\Windows\WindowsCopilot" /v TurnOffWindowsCopilot /t REG_DWORD /d 1 /f && reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsCopilot" /v TurnOffWindowsCopilot /t REG_DWORD /d 1 /f
